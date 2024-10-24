@@ -40,6 +40,7 @@ export function useOpenChainFunctionSelector(functionSelector: string) {
           ) {
             const functions = data.result.function[`0x${ functionSelector }`];
             if (functions.length > 0) {
+              // realistically, chances of multiple usable function selectors are infinitesimally small
               const errorEntry = functions[0];
               setErrorName(errorEntry.name);
             } else {

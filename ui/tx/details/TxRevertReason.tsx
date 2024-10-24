@@ -19,7 +19,7 @@ const TxRevertReason = (props: Props) => {
   const { errorName, loadingErrorName } = useOpenChainFunctionSelector(functionSelector);
 
   if ('raw' in props) {
-    if (!HEX_REGEXP.test(props.raw)) {
+    if (!isRawHex) {
       return <Text>{ raw }</Text>;
     }
 
